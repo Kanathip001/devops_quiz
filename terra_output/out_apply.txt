@@ -1,0 +1,91 @@
+PS D:\65310531\Devop\devops_quiz> terraform apply  
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # docker_container.web_app will be created
+  + resource "docker_container" "web_app" {
+      + attach                                      = false
+      + bridge                                      = (known after apply)
+      + command                                     = [
+          + "npm",
+          + "start",
+        ]
+      + container_logs                              = (known after apply)
+      + container_read_refresh_timeout_milliseconds = 15000
+      + entrypoint                                  = (known after apply)
+      + env                                         = (known after apply)
+      + exit_code                                   = (known after apply)
+      + hostname                                    = (known after apply)
+      + id                                          = (known after apply)
+      + image                                       = "node:16"
+      + init                                        = (known after apply)
+      + ipc_mode                                    = (known after apply)
+      + log_driver                                  = (known after apply)
+      + logs                                        = false
+      + must_run                                    = true
+      + name                                        = "web-app-container"
+      + network_data                                = (known after apply)
+      + read_only                                   = false
+      + remove_volumes                              = true
+      + restart                                     = "no"
+      + rm                                          = false
+      + runtime                                     = (known after apply)
+      + security_opts                               = (known after apply)
+      + shm_size                                    = (known after apply)
+      + start                                       = true
+      + stdin_open                                  = false
+      + stop_signal                                 = (known after apply)
+      + stop_timeout                                = (known after apply)
+      + tty                                         = false
+      + wait                                        = false
+      + wait_timeout                                = 60
+      + working_dir                                 = "/app"
+
+      + healthcheck (known after apply)
+
+      + labels (known after apply)
+
+      + ports {
+          + external = 3000
+          + internal = 3000
+          + ip       = "0.0.0.0"
+          + protocol = "tcp"
+        }
+
+      + volumes {
+          + container_path = "/app"
+          + host_path      = "D:/65310531/Devop/devops_quiz/"
+            # (2 unchanged attributes hidden)
+        }
+    }
+
+  # docker_image.node_app will be created
+  + resource "docker_image" "node_app" {
+      + id           = (known after apply)
+      + image_id     = (known after apply)
+      + keep_locally = false
+      + name         = "node:16"
+      + repo_digest  = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+docker_image.node_app: Creating...
+docker_image.node_app: Still creating... [10s elapsed]
+docker_image.node_app: Still creating... [20s elapsed]
+docker_image.node_app: Creation complete after 21s [id=sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0bnode:16]
+docker_container.web_app: Creating...
+docker_container.web_app: Creation complete after 2s [id=8c86268e831e38fd5f14bc2db428fb32f4cd2eb98884ef223bef0df9e29f42fe]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+PS D:\65310531\Devop\devops_quiz>

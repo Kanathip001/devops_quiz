@@ -1,0 +1,112 @@
+PS D:\65310531\Devop\devops_quiz> terraform destroy
+docker_image.node_app: Refreshing state... [id=sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0bnode:16]
+docker_container.web_app: Refreshing state... [id=8c86268e831e38fd5f14bc2db428fb32f4cd2eb98884ef223bef0df9e29f42fe]
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # docker_container.web_app will be destroyed
+  - resource "docker_container" "web_app" {
+      - attach                                      = false -> null
+      - command                                     = [
+          - "npm",
+          - "start",
+        ] -> null
+      - container_read_refresh_timeout_milliseconds = 15000 -> null
+      - cpu_shares                                  = 0 -> null
+      - dns                                         = [] -> null
+      - dns_opts                                    = [] -> null
+      - dns_search                                  = [] -> null
+      - entrypoint                                  = [
+          - "docker-entrypoint.sh",
+        ] -> null
+      - env                                         = [] -> null
+      - group_add                                   = [] -> null
+      - hostname                                    = "8c86268e831e" -> null
+      - id                                          = "8c86268e831e38fd5f14bc2db428fb32f4cd2eb98884ef223bef0df9e29f42fe" -> null
+      - image                                       = "sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0b" -> null
+      - init                                        = false -> null
+      - ipc_mode                                    = "private" -> null
+      - log_driver                                  = "json-file" -> null
+      - log_opts                                    = {} -> null
+      - logs                                        = false -> null
+      - max_retry_count                             = 0 -> null
+      - memory                                      = 0 -> null
+      - memory_swap                                 = 0 -> null
+      - must_run                                    = true -> null
+      - name                                        = "web-app-container" -> null    
+      - network_data                                = [
+          - {
+              - gateway                   = "172.17.0.1"
+              - global_ipv6_prefix_length = 0
+              - ip_address                = "172.17.0.2"
+              - ip_prefix_length          = 16
+              - mac_address               = "02:42:ac:11:00:02"
+              - network_name              = "bridge"
+                # (2 unchanged attributes hidden)
+            },
+        ] -> null
+      - network_mode                                = "bridge" -> null
+      - privileged                                  = false -> null
+      - publish_all_ports                           = false -> null
+      - read_only                                   = false -> null
+      - remove_volumes                              = true -> null
+      - restart                                     = "no" -> null
+      - rm                                          = false -> null
+      - runtime                                     = "runc" -> null
+      - security_opts                               = [] -> null
+      - shm_size                                    = 64 -> null
+      - start                                       = true -> null
+      - stdin_open                                  = false -> null
+      - stop_timeout                                = 0 -> null
+      - storage_opts                                = {} -> null
+      - sysctls                                     = {} -> null
+      - tmpfs                                       = {} -> null
+      - tty                                         = false -> null
+      - wait                                        = false -> null
+      - wait_timeout                                = 60 -> null
+      - working_dir                                 = "/app" -> null
+        # (7 unchanged attributes hidden)
+
+      - ports {
+          - external = 3000 -> null
+          - internal = 3000 -> null
+          - ip       = "0.0.0.0" -> null
+          - protocol = "tcp" -> null
+        }
+
+      - volumes {
+          - container_path = "/app" -> null
+          - host_path      = "D:/65310531/Devop/devops_quiz/" -> null
+          - read_only      = false -> null
+            # (2 unchanged attributes hidden)
+        }
+    }
+
+  # docker_image.node_app will be destroyed
+  - resource "docker_image" "node_app" {
+      - id           = "sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0bnode:16" -> null
+      - image_id     = "sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0b" -> null
+      - keep_locally = false -> null
+      - name         = "node:16" -> null
+      - repo_digest  = "node@sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0b" -> null
+    }
+
+Plan: 0 to add, 0 to change, 2 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+docker_container.web_app: Destroying... [id=8c86268e831e38fd5f14bc2db428fb32f4cd2eb98884ef223bef0df9e29f42fe]
+docker_container.web_app: Destruction complete after 0s
+docker_image.node_app: Destroying... [id=sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb8c6e4246c6389705c0bnode:16]
+docker_image.node_app: Destruction complete after 2s
+
+Destroy complete! Resources: 2 destroyed.
+PS D:\65310531\Devop\devops_quiz> 
